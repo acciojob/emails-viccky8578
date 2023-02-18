@@ -1,12 +1,12 @@
 package com.driver;
 
-import java.lang.reflect.Array;
+//import java.lang.reflect.Array;
 import java.util.*;
 
 
 public class Gmail extends Email {
 
-    class Mail{
+   static class Mail{
 
         private Date date;
         private String sender;
@@ -122,9 +122,9 @@ public class Gmail extends Email {
         return inboxCapacity;
     }
     //created by me
-    public void seeMessageInTrash(){
-        for(String message:trash.keySet()){
-            System.out.println(message);
-        }
-    }
+//    public void seeMessageInTrash(){
+//        for(String message:trash.keySet()){
+//            System.out.println(message);
+//        }
+//    }
 }

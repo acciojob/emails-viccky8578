@@ -1,10 +1,9 @@
 package com.driver;
-import org.apache.commons.lang3.tuple.Pair;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.PriorityQueue;
+//import java.util.PriorityQueue;
 
 public class Workspace extends Gmail{
 
@@ -12,7 +11,6 @@ public class Workspace extends Gmail{
 
     public Workspace(String emailId) {
         // The inboxCapacity is equal to the maximum value an integer can store.
-
         super(emailId,Integer.MAX_VALUE);
         calendar= new ArrayList<>();
     }
@@ -21,7 +19,6 @@ public class Workspace extends Gmail{
         //add the meeting to calendar
         calendar.add(meeting);
     }
-
     class MyComparator implements Comparator<Meeting>{
 
         @Override
@@ -44,11 +41,10 @@ public class Workspace extends Gmail{
 
         int attend=1;
         String endTime=calendar.get(0).getEndTime().toString().substring(0,2)+calendar.get(0).getEndTime().toString().substring(3);
-
         for(int i=1;i<calendar.size();i++){
             String startTime=calendar.get(i).getStartTime().toString().substring(0,2)+calendar.get(i).getStartTime().toString().substring(3);
 
-            //if start TIme of curr meeting > than end time of prev meeting then i can attend this meeting , so attend ++
+            //if start TIme of curr meeting > than end time of prev meeting then I can attend this meeting , so attend ++
             if(startTime.compareTo(endTime)>0){
                 endTime=calendar.get(i).getEndTime().toString().substring(0,2)+calendar.get(i).getEndTime().toString().substring(3);
                 attend++;
