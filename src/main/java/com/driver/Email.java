@@ -39,15 +39,15 @@ public class Email {
         {
             if (Character.isLowerCase(i))
                 hasLower = true;
-            if (Character.isUpperCase(i))
+            else if (Character.isUpperCase(i))
                 hasUpper = true;
-            if (Character.isDigit(i))
+           else  if (Character.isDigit(i))
                 hasDigit = true;
             //if ((i>='0' && i<='9') && !(i>='a' && i<='z') && !(i>='A' && i<='Z') )
             else
                 specialChar = true;
         }
-        if((n>8) && hasLower && hasDigit && hasUpper && specialChar) return true;
+        if((n>=8) && hasLower && hasDigit && hasUpper && specialChar) return true;
         return false;
     }
 }
