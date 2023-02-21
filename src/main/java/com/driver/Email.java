@@ -1,10 +1,10 @@
 package com.driver;
 
-import java.util.HashSet;
+//import java.util.HashSet;
 
 public class Email {
 
-    private String emailId;
+  final  private String emailId;
     private String password;
 
     public Email(String emailId){
@@ -43,7 +43,8 @@ public class Email {
                 hasUpper = true;
             if (Character.isDigit(i))
                 hasDigit = true;
-            if ((i>='0' && i<='9') && !(i>='a' && i<='z') && !(i>='A' && i<='Z') )
+            //if ((i>='0' && i<='9') && !(i>='a' && i<='z') && !(i>='A' && i<='Z') )
+            else
                 specialChar = true;
         }
         if((n>8) && hasLower && hasDigit && hasUpper && specialChar) return true;
